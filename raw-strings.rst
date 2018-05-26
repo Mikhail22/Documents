@@ -112,7 +112,7 @@ It will load the following block by simple rule:
 
 In this case the result will be a string: ``"  first line\n  last line"``
 
-.. note::
+.. code::
 
 	NOTE: the loader should of course be aware of the indent of 
 	the containing block. In this case, the line ``data >>> "  "``
