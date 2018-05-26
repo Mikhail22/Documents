@@ -1,22 +1,21 @@
 
 Specification
----------
-
-note
 =====
 
 note
 -----
 
-Raw string `statement` has the following form:
+note
+-----
+
+inline ``var`` has the following form:
 
 .. code:: python
 
-	variable_name >>> [loader parameter]
-	first line of text
-	second line of text 
-	...
+	def ():
+		if x == 1:
+			print ("foo")
+		return
 
-Here "loader parameter" is a string - namely a match  
-string for deciding when to stop and return a string  
-variable. 
+
+normal *italic* and **bold** 
