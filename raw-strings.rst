@@ -4,7 +4,7 @@ Raw string statement
 ``author: Mikhail V., 2018``
 
 Issue 
----------
+======
 
 Vast majority of tasks include operations with text in  
 various grades of complexity. Strings are ubiquitous 
@@ -60,7 +60,7 @@ strings has some additional issues:
 
 
 Proposal
------------
+======
 
 It is suggested to add syntax for the "raw string statement".
 This should enable the possibility to define text pieces in 
@@ -150,10 +150,10 @@ beginning (no indentation):
 
 .. code:: python
 
-	data >>> B"#tag"
-first line  
-last line
-#tag
+		data >>> X"#tag"
+	first line  
+	last line
+	#tag
 
 It will treat the block "as is", like in current TQS behaviour,
 namely will load everything together with indents.
