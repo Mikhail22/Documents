@@ -2,7 +2,13 @@
 Specification
 ---------
 
-Raw string statement has the following form:
+note
+=====
+
+note
+^^^^^
+
+Raw string `statement` has the following form:
 
 .. code:: python
 
