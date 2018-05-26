@@ -68,6 +68,7 @@ source code without the need for interpreted characters.
 Thereby it should eliminate the need for manipulations 
 with these text pieces and this should solve all of the above 
 mentioned issues. 
+
 Additionally it should solve some issues with readability 
 and data input.
 
@@ -88,8 +89,10 @@ Here "loader parameter" is a string - namely a match
 string for deciding when to stop and return a string 
 variable. 
 
-Explanation with an example: say we have a text block with 
-2 leading spaces. To make them into a string simply write:
+**Explanation with an example: **
+
+|  Say we have a text block with 2 leading spaces. 
+|  To make them into a string simply write:
 
 .. code:: python
 
@@ -98,8 +101,8 @@ Explanation with an example: say we have a text block with
 	  last line
 	#rest of code
 
-The parameter in this case is two spaces in a string ``"  "``. It will 
-load the following block by simple rule: 
+The parameter in this case is two spaces in a string ``"  "``.
+It will load the following block by simple rule: 
 
 - take ``"  first line"`` and compare its beginning with ``"  "`` string
 - if true : the line is loaded
@@ -109,7 +112,7 @@ load the following block by simple rule:
 In this case the result will be a string: ``"  first line\n  last line"``
 
 NOTE: the loader should of course be aware of the indent of 
-the containing block. In this case, the header line (``data >>> "  "``)
+the containing block. In this case, the line ``data >>> "  "``
 is assumed to be starting level of indentation. So the approach 
 will work independently from the parent indentation.
 
@@ -124,10 +127,11 @@ Here the match sequence ``"  "`` is prefixed with ``!``:
 	#rest of code
 
 Here the loading algorithm is same, with only difference that the 
-string "  " will be removed from the result, so it returns
+string ``"  "`` will be **removed** from the result, so it returns
 a string without these leading spaces:  ``"first line\nlast line"``
 
 Further, one more modifier is suggested: 
+
 Here the match string is prefixed with ``?``.
 
 .. code:: python
@@ -146,7 +150,7 @@ without additional indentation. It may be also prefered
 due to explicit terminator.
 
 Special flag for blocks that need to start from the line 
-beginning (no indentation): 
+beginning (do not honor suite indents): 
 
 .. code:: python
 
@@ -156,7 +160,8 @@ beginning (no indentation):
 	#tag
 
 It will treat the block "as is", like in current TQS behaviour,
-namely will load everything together with indents.
+namely will load everything together with indents. The tag
+must be in the beginning of the line.
 
 Convenience syntax can be introduced for one-line assignment. 
 Although it should have slightly different syntax. 
@@ -189,8 +194,7 @@ Triple colon ``:::`` for block definition:
 	#
 
 This seems to have a lightweight, less distracting 
-look than ``>>>``, at least in proportional fonts.
-By monospaced fonts the benefit of ``:::`` is questionable.
+look than ``>>>``, at least in some fonts.
 
 
 Main problems with the proposals
