@@ -11,9 +11,9 @@ various grades of complexity. Strings are ubiquitous
 and are needed even in simplest scripts, e.g. for  
 defining file paths.
 
-String literals are interpreted - i.e. special character ``"\"``  
-may change the contents of a string. 
-Raw string type r"" has the least amount of such cases, 
+String literals are interpreted - i.e. backslash ``"\"`` may 
+change the contents of a string. 
+Raw string type ``r""`` has the least amount of such cases, 
 still the inclusion of the quote character needs escaping. 
 
 There is no string type which is totally uninterpreted.
@@ -98,23 +98,23 @@ Explanation with an example: say we have a text block with
 	  last line
 	#rest of code
 
-The parameter in this case is two spaces in a string "  ". It will 
+The parameter in this case is two spaces in a string ``"  "``. It will 
 load the following block by simple rule: 
 
-- take "  first line" and compare its beginning with "  " string
+- take ``"  first line"`` and compare its beginning with ``"  "`` string
 - if true : the line is loaded
 - if not true : stops and returns the string
 - repeat this for next lines
 
-In this case the result will be a string: "  begin\n  end"
+In this case the result will be a string: ``"  first line\n  last line"``
 
 NOTE: the loader should of course be aware of the indent of 
-the containing block. In this case, the header line (data >>> "  ")
+the containing block. In this case, the header line (``data >>> "  "``)
 is assumed to be starting level of indentation. So the approach 
 will work independently from the parent indentation.
 
 Further, the syntax suggests a parameter modifer. 
-Here the match sequence "  " is prefixed with "!":
+Here the match sequence ``"  "`` is prefixed with ``!``:
 
 .. code:: python
 
@@ -125,10 +125,10 @@ Here the match sequence "  " is prefixed with "!":
 
 Here the loading algorithm is same, with only difference that the 
 string "  " will be removed from the result, so it returns
-a string without these leading spaces:  "begin\nend"
+a string without these leading spaces:  ``"first line\nlast line"``
 
 Further, one more modifier is suggested: 
-Here the match string is prefixed with "?".
+Here the match string is prefixed with ``?``.
 
 .. code:: python
 	
@@ -139,7 +139,7 @@ Here the match string is prefixed with "?".
 	
 The loading algorithm in this case is different:
 it will load each next line *until* the line 
-beginning matches "#eof".
+beginning matches ``"#eof"``.
 
 The benefit of such option - the data can be presented 
 without additional indentation. It may be also prefered 
@@ -176,7 +176,7 @@ is removed. This rule is under question though.
 Alternative symbols suggestion
 -----------------
 
-Alternative spellings for the stream >>> operator
+Alternative spellings for the stream ``>>>`` operator
 are suggested:
 
 Triple colon ``:::`` for block definition:
@@ -189,8 +189,8 @@ Triple colon ``:::`` for block definition:
 	#
 
 This seems to have a lightweight, less distracting 
-look than >>>, at least in proportional fonts.
-By monospaced fonts the benefit of ::: is questionable.
+look than ``>>>``, at least in proportional fonts.
+By monospaced fonts the benefit of ``:::`` is questionable.
 
 
 Main problems with the proposals
