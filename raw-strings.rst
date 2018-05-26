@@ -112,10 +112,10 @@ It will load the following block by simple rule:
 
 In this case the result will be a string: ``"  first line\n  last line"``
 
-- NOTE: the loader should of course be aware of the indent of 
-the containing block. In this case, the line ``data >>> "  "``
-is assumed to be starting level of indentation. So the approach 
-will work independently from the parent indentation.
+* NOTE: the loader should of course be aware of the indent of 
+	the containing block. In this case, the line ``data >>> "  "``
+	is assumed to be starting level of indentation. So the approach 
+	will work independently from the parent indentation.
 
 Further, the syntax suggests a parameter modifer. 
 Here the match sequence ``"  "`` is prefixed with ``!``:
