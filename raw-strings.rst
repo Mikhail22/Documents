@@ -11,7 +11,7 @@ various grades of complexity. Strings are ubiquitous
 and are needed even in simplest scripts, e.g. for  
 defining file paths.
 
-String literals are interpreted - i.e. backslash ``"\"`` may 
+Python strings are interpreted - i.e. backslash ``"\"`` may 
 change the contents of a string. 
 Raw string type ``r""`` has the least amount of such cases, 
 still the inclusion of the quote character needs escaping. 
@@ -89,10 +89,11 @@ Here "loader parameter" is a string - namely a match
 string for deciding when to stop and return a string 
 variable. 
 
-**Explanation with an example: **
+Explanation with an example: 
 
-|  Say we have a text block with 2 leading spaces. 
-|  To make them into a string simply write:
+Say we have a text block with 2 leading spaces. 
+
+To make them into a string simply write:
 
 .. code:: python
 
@@ -101,7 +102,7 @@ variable.
 	  last line
 	#rest of code
 
-The parameter in this case is two spaces in a string ``"  "``.
+The parameter in this case is two spaces in a string ``"    "``.
 It will load the following block by simple rule: 
 
 - take ``"  first line"`` and compare its beginning with ``"  "`` string
