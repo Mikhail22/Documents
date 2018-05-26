@@ -6,7 +6,7 @@ note
 =====
 
 note
-^^^^^
+-----
 
 Raw string `statement` has the following form:
 
