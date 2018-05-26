@@ -11,6 +11,6 @@ Raw string statement has the following form:
 	second line of text 
 	...
 
-Here "loader parameter" is a string - namely a match 
-string for deciding when to stop and return a string 
+Here "loader parameter" is a string - namely a match  
+string for deciding when to stop and return a string  
 variable. 
