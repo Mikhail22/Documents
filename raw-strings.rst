@@ -11,7 +11,7 @@ various grades of complexity. Strings are ubiquitous
 and are needed even in simplest scripts, e.g. for  
 defining file paths.
 
-String literals are interpreted - i.e. special character "\" 
+String literals are interpreted - i.e. special character ``"\"``  
 may change the contents of a string. 
 Raw string type r"" has the least amount of such cases, 
 still the inclusion of the quote character needs escaping. 
